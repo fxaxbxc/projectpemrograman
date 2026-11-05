@@ -33,4 +33,31 @@ void tampilkanMenu() {
 
     cout << "==========================================" << endl;
     cout << "Masukkan pilihan (1-6): ";
+    
+// Fungsi menambahkan kegiatan
+void tambahKegiatan() {
+    tampilkanJudul("TAMBAH KEGIATAN");
+
+    if (jumlahKegiatan >= MAX_KEGIATAN) {
+        cout << "Kapasitas kegiatan sudah penuh!" << endl;
+        return;
+    }
+
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    cout << "Nama Kegiatan   : ";
+    getline(cin, namaKegiatan[jumlahKegiatan]);
+
+    cout << "Waktu Kegiatan  : ";
+    getline(cin, waktuKegiatan[jumlahKegiatan]);
+
+    cout << "Hari            : ";
+    getline(cin, HariKegiatan[jumlahKegiatan]);
+
+    statusKegiatan[jumlahKegiatan] = 0;
+
+    jumlahKegiatan++;
+
+    cout << "\nKegiatan berhasil ditambahkan!" << endl;
+}
 }
