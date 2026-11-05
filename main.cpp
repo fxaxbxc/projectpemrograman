@@ -61,3 +61,49 @@ void tambahKegiatan() {
     cout << "\nKegiatan berhasil ditambahkan!" << endl;
 }
 }
+// Fungsi melihat daftar kegiatan
+void lihatKegiatan() {
+    tampilkanJudul("DAFTAR KEGIATAN");
+
+    if (jumlahKegiatan == 0) {
+        cout << "Belum ada kegiatan yang ditambahkan." << endl;
+        return;
+    }
+
+    for (int i = 0; i < jumlahKegiatan; i++) {
+        cout << "\nKegiatan ke-" << i + 1 << endl;
+        cout << "Nama       : " << namaKegiatan[i] << endl;
+        cout << "Waktu      : " << waktuKegiatan[i] << endl;
+        cout << "Hari       : " << HariKegiatan[i] << endl;
+
+        if (statusKegiatan[i] == 0) {
+            cout << "Status     : Belum Selesai" << endl;
+        }
+        else {
+            cout << "Status     : Selesai" << endl;
+        }
+
+        cout << "------------------------------------------" << endl;
+    }
+}
+
+// Fungsi menghitung jumlah kegiatan
+void cekJumlahKegiatan() {
+    tampilkanJudul("JUMLAH KEGIATAN");
+
+    int selesai = 0;
+    int belumSelesai = 0;
+
+    for (int i = 0; i < jumlahKegiatan; i++) {
+        if (statusKegiatan[i] == 1) {
+            selesai++;
+        }
+        else {
+            belumSelesai++;
+        }
+    }
+
+    cout << "Total Kegiatan       : " << jumlahKegiatan << endl;
+    cout << "Kegiatan Selesai     : " << selesai << endl;
+    cout << "Belum Selesai        : " << belumSelesai << endl;
+}
