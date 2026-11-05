@@ -107,3 +107,51 @@ void cekJumlahKegiatan() {
     cout << "Kegiatan Selesai     : " << selesai << endl;
     cout << "Belum Selesai        : " << belumSelesai << endl;
 }
+// Program utama
+int main() {
+    int pilihan;
+
+    tampilkanJudul("DAILY ACTIVITY PLANNER - C++");
+
+    cout << "Selamat datang di Daily Activity Planner!" << endl;
+    cout << "Kelola kegiatan harianmu dengan lebih teratur.\n";
+
+    while (true) {
+        tampilkanMenu();
+        cin >> pilihan;
+
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "\nInput harus berupa angka!" << endl;
+            continue;
+        }
+
+        if (pilihan == 1) {
+            tambahKegiatan();
+        }
+        else if (pilihan == 2) {
+            lihatKegiatan();
+        }
+        else if (pilihan == 3) {
+            cekJumlahKegiatan();
+        }
+        else if (pilihan == 4) {
+            updateStatus();
+        }
+        else if (pilihan == 5) {
+            hapusKegiatan();
+        }
+        else if (pilihan == 6) {
+            tampilkanJudul("TERIMA KASIH");
+            cout << "Program Daily Activity Planner ditutup." << endl;
+            cout << "Semoga harimu lebih produktif!" << endl;
+            break;
+        }
+        else {
+            cout << "\nPilihan tidak tersedia. Silakan pilih menu 1-6." << endl;
+        }
+    }
+
+    return 0;
+}
