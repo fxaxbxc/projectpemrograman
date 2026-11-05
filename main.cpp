@@ -107,6 +107,7 @@ void cekJumlahKegiatan() {
     cout << "Kegiatan Selesai     : " << selesai << endl;
     cout << "Belum Selesai        : " << belumSelesai << endl;
 }
+
 // Fungsi memperbarui status kegiatan
 void updateStatus() {
     tampilkanJudul("UPDATE STATUS KEGIATAN");
