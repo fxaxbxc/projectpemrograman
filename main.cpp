@@ -149,6 +149,40 @@ void updateStatus() {
         cout << "Pilihan status tidak tersedia!" << endl;
     }
 }
+// Fungsi menghapus kegiatan
+void hapusKegiatan() {
+    tampilkanJudul("HAPUS KEGIATAN");
+
+    if (jumlahKegiatan == 0) {
+        cout << "Belum ada kegiatan yang dapat dihapus." << endl;
+        return;
+    }
+
+    for (int i = 0; i < jumlahKegiatan; i++) {
+        cout << i + 1 << ". " << namaKegiatan[i] << endl;
+    }
+
+    int nomor;
+
+    cout << "\nPilih nomor kegiatan yang ingin dihapus: ";
+    cin >> nomor;
+
+    if (nomor < 1 || nomor > jumlahKegiatan) {
+        cout << "Nomor kegiatan tidak tersedia!" << endl;
+        return;
+    }
+
+    for (int i = nomor - 1; i < jumlahKegiatan - 1; i++) {
+        namaKegiatan[i] = namaKegiatan[i + 1];
+        waktuKegiatan[i] = waktuKegiatan[i + 1];
+        HariKegiatan[i] = HariKegiatan[i + 1];
+        statusKegiatan[i] = statusKegiatan[i + 1];
+    }
+
+    jumlahKegiatan--;
+
+    cout << "Kegiatan berhasil dihapus!" << endl;
+}
 // Program utama
 int main() {
     int pilihan;
