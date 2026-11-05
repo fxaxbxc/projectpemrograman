@@ -107,6 +107,48 @@ void cekJumlahKegiatan() {
     cout << "Kegiatan Selesai     : " << selesai << endl;
     cout << "Belum Selesai        : " << belumSelesai << endl;
 }
+// Fungsi memperbarui status kegiatan
+void updateStatus() {
+    tampilkanJudul("UPDATE STATUS KEGIATAN");
+
+    if (jumlahKegiatan == 0) {
+        cout << "Belum ada kegiatan yang tersedia." << endl;
+        return;
+    }
+
+    for (int i = 0; i < jumlahKegiatan; i++) {
+        cout << i + 1 << ". " << namaKegiatan[i] << endl;
+    }
+
+    int nomor;
+
+    cout << "\nPilih nomor kegiatan: ";
+    cin >> nomor;
+
+    if (nomor < 1 || nomor > jumlahKegiatan) {
+        cout << "Nomor kegiatan tidak tersedia!" << endl;
+        return;
+    }
+
+    cout << "\n1. Belum Selesai" << endl;
+    cout << "2. Selesai" << endl;
+    cout << "Pilih status baru: ";
+
+    int status;
+    cin >> status;
+
+    if (status == 1) {
+        statusKegiatan[nomor - 1] = 0;
+        cout << "Status berhasil diubah menjadi Belum Selesai." << endl;
+    }
+    else if (status == 2) {
+        statusKegiatan[nomor - 1] = 1;
+        cout << "Status berhasil diubah menjadi Selesai." << endl;
+    }
+    else {
+        cout << "Pilihan status tidak tersedia!" << endl;
+    }
+}
 // Program utama
 int main() {
     int pilihan;
