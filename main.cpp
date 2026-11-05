@@ -33,6 +33,7 @@ void tampilkanMenu() {
 
     cout << "==========================================" << endl;
     cout << "Masukkan pilihan (1-6): ";
+}
     
 // Fungsi menambahkan kegiatan
 void tambahKegiatan() {
@@ -59,8 +60,9 @@ void tambahKegiatan() {
     jumlahKegiatan++;
 
     cout << "\nKegiatan berhasil ditambahkan!" << endl;
+   
 }
-}
+
 // Fungsi melihat daftar kegiatan
 void lihatKegiatan() {
     tampilkanJudul("DAFTAR KEGIATAN");
@@ -229,6 +231,6 @@ int main() {
             cout << "\nPilihan tidak tersedia. Silakan pilih menu 1-6." << endl;
         }
     }
-
+   
     return 0;
 }
